@@ -30,7 +30,7 @@ jobs:
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         with:
-          args: --image,registry.jetbrains.team/p/sa/containers/qodana-clang:2025.3-nightly,--code-climate
+          args: --image,registry.jetbrains.team/p/sa/containers/qodana-clang:2026.1-nightly,--code-climate
           pr-mode: true
           artifact-name: 'qodana-report-results'
           upload-result: 'true'
