@@ -15,3 +15,6 @@ qodana-clang:
   artifacts:
     reports:
       codequality: .qodana/results/gl-code-quality-report.json
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
