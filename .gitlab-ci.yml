@@ -1,0 +1,2 @@
+include:
+  - 'templates/.qodana-scan-clang.yml'

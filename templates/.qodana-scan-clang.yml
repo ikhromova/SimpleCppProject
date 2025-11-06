@@ -1,0 +1,17 @@
+include:
+  - component: $CI_SERVER_FQDN/qodana/qodana/qodana-gitlab-ci@v2025.2
+    inputs:
+      job-name: qodana-clang
+      args: --image,registry.jetbrains.team/p/sa/containers/qodana-clang:2026.1-nightly,--results-dir,$CI_PROJECT_DIR/.qodana/results,--code-climate
+      artifact-name: qodana-clang-results
+      code-quality-report: true
+
+qodana-clang:
+  before_script:
+    - echo "$REGISTRY_PASSWORD" | docker login registry.jetbrains.team -u "$REGISTRY_USERNAME" --password-stdin
+  variables:
+    QODANA_TOKEN: $QODANA_TOKEN
+    QODANA_USE_NIGHTLY: true
+  artifacts:
+    reports:
+      codequality: .qodana/results/gl-code-quality-report.json
