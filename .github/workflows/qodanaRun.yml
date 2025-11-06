@@ -35,3 +35,4 @@ jobs:
           artifact-name: 'qodana-report-results'
           upload-result: 'true'
           use-caches: 'false'
+          use-nightly: true
