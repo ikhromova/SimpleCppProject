@@ -1,0 +1,5 @@
+version: 1.0
+bootstrap: |
+  sudo whoami
+  rm -rf build
+  cmake -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
